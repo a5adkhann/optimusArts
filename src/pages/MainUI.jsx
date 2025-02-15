@@ -6,6 +6,7 @@ import VectorSection from '../components/VectorSection'
 import DigitizingSection from '../components/DigitizingSection'
 import OurQuality from '../components/OurQuality'
 import CoreServices from '../components/CoreServices'
+import Footer from '../components/Footer/Footer'
 
 const MainUI = () => {
   return (
@@ -18,6 +19,7 @@ const MainUI = () => {
             <DigitizingSection />
             <OurQuality />
             <CoreServices />
+            <Footer />
         </div>
     </>
   )
