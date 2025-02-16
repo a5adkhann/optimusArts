@@ -3,7 +3,7 @@ import React from 'react';
 const VectorSection = () => {
   return (
     <>
-      <div className='vector-section-text text-center px-6 md:px-10 py-10'>
+      <div data-aos="fade-up" className='vector-section-text text-center px-6 md:px-10 py-10'>
         <p className='font-bold text-2xl text-[#707070]'>
           RASTER TO VECTOR ART CONVERSION SERVICE
         </p>
@@ -14,7 +14,7 @@ const VectorSection = () => {
       </div>
 
       {/* Responsive Image Section */}
-      <div className='flex justify-center'>
+      <div data-aos="fade-up" className='flex justify-center'>
         <img src="./assets/vectorSection.webp" alt="Vector Art" className="w-full max-w-8xl object-cover" />
       </div>
     </>

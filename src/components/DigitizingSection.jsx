@@ -3,7 +3,7 @@ import React from 'react';
 const DigitizingSection = () => {
   return (
     <>
-      <div className='digitizing-section-text text-center px-6 md:px-10 py-10'>
+      <div data-aos="fade-up" className='digitizing-section-text text-center px-6 md:px-10 py-10'>
         <p className='font-bold text-2xl text-[#707070]'>
           CUSTOM EMBROIDERY DIGITIZING SERVICE
         </p>
@@ -14,7 +14,7 @@ const DigitizingSection = () => {
       </div>
 
       {/* Responsive Image Section */}
-      <div className='flex justify-center'>
+      <div data-aos="fade-up" className='flex justify-center'>
         <img src="./assets/digitizingSection.webp" alt="Digitizing" className="object-cover w-full max-w-8xl" />
       </div>
     </>

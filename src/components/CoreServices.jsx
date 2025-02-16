@@ -3,7 +3,7 @@ import coreServicesData from '../ArrayOFObjects/CoreServicesData';
 
 const CoreServices = () => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-10 py-10">
+        <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-10 py-10">
             {coreServicesData.map((coreService, index) => (
                 <div
                     key={index} 
