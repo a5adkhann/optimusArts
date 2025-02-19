@@ -6,7 +6,11 @@ import { CiSearch } from "react-icons/ci";
 import { MdOutlineShoppingBag } from "react-icons/md";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // Toggle state
+  const [isOpen, setIsOpen] = useState(false); // Toggle state for mobile menu
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // Toggle state for search bar
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
   return (
     <>
@@ -14,16 +18,23 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-4 px-6 bg-white shadow-md">
         {/* Logo Section */}
         <div className="main-logo">
-          <img src="./assets/main-logo.png" width={150} alt="Logo" />
+          <Link to="/">
+            <img src="./assets/main-logo.png" width={150} alt="Logo" />
+          </Link>
         </div>
 
         {/* Mobile Toggle Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-3xl text-gray-700 z-50 flex"
+          onClick={toggleMenu}
+          className="md:hidden text-3xl text-gray-700 z-50 flex items-center"
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-label="Toggle menu"
         >
-          <CiSearch />
-          <MdOutlineShoppingBag />
+          <CiSearch
+            onClick={toggleSearch}
+            className="mr-4" // Adds a little spacing for icons
+          />
+          <MdOutlineShoppingBag className="mr-4" />
           {isOpen ? <IoClose /> : <IoMenu />}
         </button>
 
@@ -31,13 +42,14 @@ const Navbar = () => {
         {isOpen && (
           <div
             className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
-            onClick={() => setIsOpen(false)}
+            onClick={toggleMenu}
+            aria-hidden="true"
           ></div>
         )}
 
         {/* Navbar Items (Responsive) */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 md:w-auto bg-white shadow-lg md:shadow-none transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 right-0 h-full w-64 md:w-auto bg-white shadow-lg md:shadow-none transform transition-transform duration-500 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } md:translate-x-0 md:static flex flex-col md:flex-row items-start md:items-center px-6 pt-16 md:pt-0 md:space-x-6 text-lg font-medium`}
         >
