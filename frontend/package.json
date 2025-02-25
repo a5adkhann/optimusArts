@@ -12,9 +12,12 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
     "aos": "^2.3.4",
+    "axios": "^1.7.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "react-icons": "^5.4.0",
+    "react-progressbar": "^15.4.1",
     "react-router-dom": "^7.1.5",
     "tailwindcss": "^4.0.6"
   },
